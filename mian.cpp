@@ -35,9 +35,9 @@ int matrix[3][3];
 
     bool failure = false;
 char com;
-  
+  while(!failure){
 failure=getmatrix(matrix);
-
+      if(failure){break;}
      for (std::string string; std::getline(std::cin, string);) {
 
          std::istringstream stream(string);
@@ -55,8 +55,8 @@ failure=getmatrix(matrix);
       
           
       failure=getmatrix(matrix1);
-    
- 
+   if(failure) {break;}
+  }
     if( !failure ) {
         switch(com){
             case '+':
