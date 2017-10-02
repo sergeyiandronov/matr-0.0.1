@@ -55,7 +55,8 @@ failure=getmatrix(matrix);
       
           
       failure=getmatrix(matrix1);
-   if(failure) {break;}
+   
+   break;
   }
     if( !failure ) {
         switch(com){
