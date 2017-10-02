@@ -2,53 +2,6 @@
 #include <sstream>
 
 using namespace std;
-int main() {
-int matrix[3][3];
-    int matrix1[3][3];
-
-    bool failure = false;
-char com;
-  while(!failure){
-     for (int j = 0; j < 3; j++) {
-         for (std::string string; std::getline(std::cin, string);) {
-
-             std::istringstream stream(string);
-
-
-             for (int i = 0; i < 3; ++i) {
-                 if (!(stream >> matrix[i][j])) {
-                     failure = true;
-                     break;
-                 }
-             }
-
-             break;
-
-
-         }
-         if (failure){
-             break;}
-     }
-     if (failure){
-         break;
-     }
-
-     for (std::string string; std::getline(std::cin, string);) {
-
-         std::istringstream stream(string);
-
-
-         if (!(stream >> com)) {
-             failure = true;
-             break;
-         }
-
-         break;
-
-#include <iostream>
-#include <sstream>
-
-using namespace std;
 bool getmatrix(int matrx[3][3]){
       bool res=false;	  
      for (int j = 0; j < 3; j++) {
