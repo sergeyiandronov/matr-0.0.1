@@ -45,11 +45,12 @@ char com;
 
          break;
 
+#include <iostream>
+#include <sstream>
 
-     }
-      if (failure){
-          break;
-      }
+using namespace std;
+bool getmatrix(int matrx[3][3]){
+      bool res=false;	  
      for (int j = 0; j < 3; j++) {
          for (std::string string; std::getline(std::cin, string);) {
 
@@ -57,21 +58,52 @@ char com;
 
 
              for (int i = 0; i < 3; ++i) {
-                 if (!(stream >> matrix1[i][j])) {
-                     failure = true;
+                 if (!(stream >> matrx[i][j])) {
+                     res = true;
                      break;
                  }
              }
+
              break;
 
 
-         }  if (failure){
+         }
+         if (res){
              break;}
      }
+     
+         
+     
+     return res;
+}
+int main() {
+int matrix[3][3];
+    int matrix1[3][3];
 
-     break;
- }
+    bool failure = false;
+char com;
+  
+failure=getmatrix(matrix);
 
+     for (std::string string; std::getline(std::cin, string);) {
+
+         std::istringstream stream(string);
+
+
+         if (!(stream >> com)) {
+             failure = true;
+             break;
+         }
+
+         break;
+
+
+     }
+      
+          
+      failure=getmatrix(matrix1);
+    
+ 
     if( !failure ) {
         switch(com){
             case '+':
@@ -115,4 +147,3 @@ char com;
 
 
     }
-
